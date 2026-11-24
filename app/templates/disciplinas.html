@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+{# Campos renderizados um a um: o macro do Flask-Bootstrap não exibe erros de RadioField #}
+<form method="post" class="form" role="form">
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.nome) }}
+    <div class="{{ 'has-error' if form.semestre.errors }}">
+        {{ wtf.form_field(form.semestre) }}
+        {% for erro in form.semestre.errors %}
+        <p class="help-block">{{ erro }}</p>
+        {% endfor %}
+    </div>
+    {{ wtf.form_field(form.submit) }}
+</form>
+
+<h2>Relação de disciplinas cadastradas</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Disciplina</th>
+            <th>Semestre</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in disciplinas %}
+        <tr>
+            <td>{{ d.nome }}</td>
+            <td>{{ d.semestre_descricao }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
