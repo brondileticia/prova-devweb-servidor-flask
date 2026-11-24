@@ -5,7 +5,8 @@ Rota implementada: **Cadastro de Disciplinas**.
 
 🔗 **Aplicação no ar:** https://leticiabrondi.pythonanywhere.com/
 
-![Tela inicial da aplicação](print_tela_inicial.png)
+<img width="1919" height="1030" alt="image" src="https://github.com/user-attachments/assets/a190a212-280d-4780-973b-8757e5c97523" />
+
 
 ---
 
